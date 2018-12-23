@@ -7,7 +7,7 @@ This package tries to give you a more readable syntax to write
 
 ### Installation
 
-```php
+```
 
 composer require imanghafoori/laravel-makesure --dev
 
@@ -48,17 +48,26 @@ Note that for technical reasons you should always pass $this into the `that` met
 
 then you have access to all of these methods:
 
+```
+
 sendingPostRequest
+
 sendingJsonPostRequest
 
 sendingDeleteRequest
+
 sendingJsonDeleteRequest
 
 sendingPutRequest
+
 sendingJsonPutRequest
 
 sendingPatchRequest
+
 sendingJsonPatchRequest
 
 sendingGetRequest
+
 sendingJsonGetRequest
+
+```
