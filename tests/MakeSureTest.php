@@ -4,9 +4,6 @@ use Imanghafoori\MakeSure\Facades\MakeSure;
 
 class MakeSureTest extends TestCase
 {
-    /**
-     *
-     */
     public function test_sendingGetRequest()
     {
         $response = Mockery::mock();

@@ -10,7 +10,6 @@ final class MakeSureServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-
     }
 
     public function register()

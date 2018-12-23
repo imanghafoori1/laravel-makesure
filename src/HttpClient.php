@@ -3,7 +3,7 @@
 namespace Imanghafoori\MakeSure;
 
 /**
- * Class HttpClient
+ * Class HttpClient.
  *
  * @method IsRespondedWith sendingPostRequest($uri, array $data = [], array $headers = [])
  * @method IsRespondedWith sendingJsonPostRequest($uri, array $data = [], array $headers = [])
@@ -15,24 +15,22 @@ namespace Imanghafoori\MakeSure;
  * @method IsRespondedWith sendingJsonPatchRequest($uri, array $data = [], array $headers = [])
  * @method IsRespondedWith sendingGetRequest($uri, array $headers = [])
  * @method IsRespondedWith sendingJsonGetRequest($uri, array $headers = [])
- *
- * @package Imanghafoori\MakeSure
  */
 class HttpClient
 {
     private $chain;
 
     private $methods = [
-        'sendingPostRequest' => 'post',
-        'sendingJsonPostRequest' => 'postJson',
-        'sendingDeleteRequest' => 'delete',
+        'sendingPostRequest'       => 'post',
+        'sendingJsonPostRequest'   => 'postJson',
+        'sendingDeleteRequest'     => 'delete',
         'sendingJsonDeleteRequest' => 'deleteJson',
-        'sendingPutRequest' => 'put',
-        'sendingJsonPutRequest' => 'putJson',
-        'sendingPatchRequest' => 'patch',
-        'sendingJsonPatchRequest' => 'patchJson',
-        'sendingGetRequest' => 'get',
-        'sendingJsonGetRequest' => 'getJson',
+        'sendingPutRequest'        => 'put',
+        'sendingJsonPutRequest'    => 'putJson',
+        'sendingPatchRequest'      => 'patch',
+        'sendingJsonPatchRequest'  => 'patchJson',
+        'sendingGetRequest'        => 'get',
+        'sendingJsonGetRequest'    => 'getJson',
     ];
 
     /**
