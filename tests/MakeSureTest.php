@@ -1,90 +1,95 @@
 <?php
 
+use Imanghafoori\MakeSure\Facades\MakeSure;
+
 class MakeSureTest extends TestCase
 {
+    /**
+     *
+     */
     public function test_sendingGetRequest()
     {
         $response = Mockery::mock();
         $response->shouldReceive('assertStatus')->once()->with(403);
-        $redirector = Mockery::mock();
+        $testCase = Mockery::mock();
 
-        $redirector->shouldReceive('get')->once()->andReturn($response);
-        MakeSure::that($redirector)->sendingGetRequest('/welcome')->isRespondedWith()->statusCode(403);
+        $testCase->shouldReceive('get')->once()->andReturn($response);
+        MakeSure::that($testCase)->sendingGetRequest('/welcome')->isRespondedWith()->statusCode(403);
     }
 
     public function test_sendingJsonGetRequest()
     {
         $response = Mockery::mock();
         $response->shouldReceive('assertStatus')->once()->with(403);
-        $redirector = Mockery::mock();
+        $testCase = Mockery::mock();
 
-        $redirector->shouldReceive('getJson')->once()->andReturn($response);
-        MakeSure::that($redirector)->sendingJsonGetRequest('/welcome')->isRespondedWith()->statusCode(403);
+        $testCase->shouldReceive('getJson')->once()->andReturn($response);
+        MakeSure::that($testCase)->sendingJsonGetRequest('/welcome')->isRespondedWith()->statusCode(403);
     }
 
     public function test_sendingPostRequest()
     {
         $formData = ['asdc' => 'yuik'];
 
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('post')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingPostRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('post')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingPostRequest('welcome', $formData);
     }
 
     public function test_sendingJsonPostRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('postJson')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingJsonPostRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('postJson')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingJsonPostRequest('welcome', $formData);
     }
 
     public function test_sendingPutRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('put')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingPutRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('put')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingPutRequest('welcome', $formData);
     }
 
     public function test_sendingJsonPutRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('putJson')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingJsonPutRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('putJson')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingJsonPutRequest('welcome', $formData);
     }
 
     public function test_sendingPatchRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('patch')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingPatchRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('patch')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingPatchRequest('welcome', $formData);
     }
 
     public function test_sendingJsonPatchRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('patchJson')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingJsonPatchRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('patchJson')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingJsonPatchRequest('welcome', $formData);
     }
 
     public function test_sendingDeleteRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('delete')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingDeleteRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('delete')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingDeleteRequest('welcome', $formData);
     }
 
     public function test_sendingJsonDeleteRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $redirector = Mockery::mock();
-        $redirector->shouldReceive('delete')->with('welcome', $formData)->once();
-        MakeSure::that($redirector)->sendingDeleteRequest('welcome', $formData);
+        $testCase = Mockery::mock();
+        $testCase->shouldReceive('delete')->with('welcome', $formData)->once();
+        MakeSure::that($testCase)->sendingDeleteRequest('welcome', $formData);
     }
 
     public function test_isOk()

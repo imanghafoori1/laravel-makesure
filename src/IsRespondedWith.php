@@ -6,6 +6,9 @@ use Imanghafoori\MakeSure\Expectations\Response;
 
 class IsRespondedWith
 {
+    /**
+     * @var \Imanghafoori\MakeSure\Chain
+     */
     private $chain;
 
     /**

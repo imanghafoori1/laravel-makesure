@@ -18,7 +18,7 @@ class Response
         $this->chain = $chain;
     }
 
-    public function redirect($url, $status = null)
+    public function redirect($url, $status = null): self 
     {
         $this->addAssertion('assertRedirect', $url);
 
@@ -29,7 +29,7 @@ class Response
         return $this;
     }
 
-    public function statusCode($code)
+    public function statusCode($code): self
     {
         $this->addAssertion('assertStatus', $code);
 
@@ -41,14 +41,14 @@ class Response
         $this->addAssertion('assertSuccessful');
     }
 
-    public function withError($value)
+    public function withError($value): self
     {
         $this->addAssertion('assertSessionHasErrors', $value);
 
         return $this;
     }
 
-    public function forbiddenStatus()
+    public function forbiddenStatus(): self
     {
         return $this->statusCode(403);
     }
