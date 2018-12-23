@@ -22,7 +22,7 @@ class Response
     {
         $this->addAssertion('assertRedirect', $url);
 
-        if (!is_null($status)) {
+        if (! is_null($status)) {
             $this->statusCode($status);
         }
 
