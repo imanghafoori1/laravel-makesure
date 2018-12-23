@@ -4,9 +4,13 @@ Easier tests for laravel
 
 [![StyleCI](https://github.styleci.io/repos/162841027/shield?branch=master)](https://github.styleci.io/repos/162841027)
 
+<a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-makesure"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/laravel-makesure.svg?style=round-square" alt="Quality Score"></img></a>
+
 This package tries to give you a more readable syntax to write 
 
 ### Installation
+
+
 
 ```
 
