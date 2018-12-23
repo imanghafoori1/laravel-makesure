@@ -18,7 +18,7 @@ class Response
         $this->chain = $chain;
     }
 
-    public function redirect($url, $status = null): self 
+    public function redirect($url, $status = null): self
     {
         $this->addAssertion('assertRedirect', $url);
 

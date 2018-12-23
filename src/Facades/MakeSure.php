@@ -6,10 +6,9 @@ use Illuminate\Support\Facades\Facade;
 use Imanghafoori\MakeSure\HttpClient;
 
 /**
- * Class MakeSure
+ * Class MakeSure.
  *
  * @method static HttpClient that($this)
- *
  */
 class MakeSure extends Facade
 {
