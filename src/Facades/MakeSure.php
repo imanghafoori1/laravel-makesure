@@ -5,20 +5,10 @@ namespace Imanghafoori\MakeSure\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class HttpClient
+ * Class MakeSure
  *
- * @method IsRespondedWith sendingPostRequest
- * @method IsRespondedWith sendingJsonPostRequest
- * @method IsRespondedWith sendingDeleteRequest
- * @method IsRespondedWith sendingJsonDeleteRequest
- * @method IsRespondedWith sendingPutRequest($uri)
- * @method IsRespondedWith sendingJsonPutRequest
- * @method IsRespondedWith sendingPatchRequest
- * @method IsRespondedWith sendingJsonPatchRequest
- * @method IsRespondedWith sendingGetRequest
- * @method IsRespondedWith sendingJsonGetRequest
+ * @method static then($this)
  *
- * @package Imanghafoori\HeyMan\MakeSure
  */
 class MakeSure extends Facade
 {

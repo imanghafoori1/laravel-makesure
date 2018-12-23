@@ -5,18 +5,18 @@ namespace Imanghafoori\MakeSure;
 /**
  * Class HttpClient
  *
- * @method IsRespondedWith sendingPostRequest
- * @method IsRespondedWith sendingJsonPostRequest
- * @method IsRespondedWith sendingDeleteRequest
- * @method IsRespondedWith sendingJsonDeleteRequest
- * @method IsRespondedWith sendingPutRequest($uri)
- * @method IsRespondedWith sendingJsonPutRequest
- * @method IsRespondedWith sendingPatchRequest
- * @method IsRespondedWith sendingJsonPatchRequest
- * @method IsRespondedWith sendingGetRequest
- * @method IsRespondedWith sendingJsonGetRequest
+ * @method IsRespondedWith sendingPostRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingJsonPostRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingDeleteRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingJsonDeleteRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingPutRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingJsonPutRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingPatchRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingJsonPatchRequest($uri, array $data = [], array $headers = [])
+ * @method IsRespondedWith sendingGetRequest($uri, array $headers = [])
+ * @method IsRespondedWith sendingJsonGetRequest($uri, array $headers = [])
  *
- * @package Imanghafoori\HeyMan\MakeSure
+ * @package Imanghafoori\MakeSure
  */
 class HttpClient
 {
@@ -50,7 +50,7 @@ class HttpClient
         return $this->sendRequest($method, ...$params);
     }
 
-    public function sendRequest($method, ...$data): IsRespondedWith
+    private function sendRequest($method, ...$data): IsRespondedWith
     {
         $this->chain->data['http'] = [$this->methods[$method], $data];
 
