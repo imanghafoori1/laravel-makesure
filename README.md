@@ -1,5 +1,6 @@
-# laravel Makesure
-Readable syntax to write tests in laravel
+# Laravel MakeSure
+
+Easier tests for laravel
 
 [![StyleCI](https://github.styleci.io/repos/162841027/shield?branch=master)](https://github.styleci.io/repos/162841027)
 
