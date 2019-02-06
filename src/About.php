@@ -2,9 +2,9 @@
 
 namespace Imanghafoori\MakeSure;
 
-class That
+class About
 {
-    public function that($phpunit) : HttpClient
+    public function about($phpunit) : HttpClient
     {
         return new HttpClient($phpunit);
     }

@@ -8,85 +8,85 @@ class MakeSureTest extends TestCase
     {
         $response = Mockery::mock();
         $response->shouldReceive('assertStatus')->once()->with(403);
-        $testCase = Mockery::mock();
+        $_this = Mockery::mock();
 
-        $testCase->shouldReceive('get')->once()->andReturn($response);
-        MakeSure::that($testCase)->sendingGetRequest('/welcome')->isRespondedWith()->statusCode(403);
+        $_this->shouldReceive('get')->once()->andReturn($response);
+        MakeSure::about($_this)->sendingGetRequest('/welcome')->isRespondedWith()->statusCode(403);
     }
 
     public function test_sendingJsonGetRequest()
     {
         $response = Mockery::mock();
         $response->shouldReceive('assertStatus')->once()->with(403);
-        $testCase = Mockery::mock();
+        $_this = Mockery::mock();
 
-        $testCase->shouldReceive('getJson')->once()->andReturn($response);
-        MakeSure::that($testCase)->sendingJsonGetRequest('/welcome')->isRespondedWith()->statusCode(403);
+        $_this->shouldReceive('getJson')->once()->andReturn($response);
+        MakeSure::about($_this)->sendingJsonGetRequest('/welcome')->isRespondedWith()->statusCode(403);
     }
 
     public function test_sendingPostRequest()
     {
         $formData = ['asdc' => 'yuik'];
 
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('post')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingPostRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('post')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingPostRequest('welcome', $formData);
     }
 
     public function test_sendingJsonPostRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('postJson')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingJsonPostRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('postJson')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingJsonPostRequest('welcome', $formData);
     }
 
     public function test_sendingPutRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('put')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingPutRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('put')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingPutRequest('welcome', $formData);
     }
 
     public function test_sendingJsonPutRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('putJson')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingJsonPutRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('putJson')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingJsonPutRequest('welcome', $formData);
     }
 
     public function test_sendingPatchRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('patch')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingPatchRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('patch')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingPatchRequest('welcome', $formData);
     }
 
     public function test_sendingJsonPatchRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('patchJson')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingJsonPatchRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('patchJson')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingJsonPatchRequest('welcome', $formData);
     }
 
     public function test_sendingDeleteRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('delete')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingDeleteRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('delete')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingDeleteRequest('welcome', $formData);
     }
 
     public function test_sendingJsonDeleteRequest()
     {
         $formData = ['asdc' => 'yuik'];
-        $testCase = Mockery::mock();
-        $testCase->shouldReceive('delete')->with('welcome', $formData)->once();
-        MakeSure::that($testCase)->sendingDeleteRequest('welcome', $formData);
+        $_this = Mockery::mock();
+        $_this->shouldReceive('delete')->with('welcome', $formData)->once();
+        MakeSure::about($_this)->sendingDeleteRequest('welcome', $formData);
     }
 
     public function test_isOk()
@@ -96,7 +96,7 @@ class MakeSureTest extends TestCase
 
         $phpunit = Mockery::mock();
         $phpunit->shouldReceive('get')->once()->andReturn($response);
-        MakeSure::that($phpunit)->sendingGetRequest('/welcome')->isOk();
+        MakeSure::about($phpunit)->sendingGetRequest('/welcome')->isOk();
     }
 
     public function test_statusCode()
