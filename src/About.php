@@ -4,7 +4,7 @@ namespace Imanghafoori\MakeSure;
 
 class About
 {
-    public function about($phpunit) : HttpClient
+    public function about($phpunit): HttpClient
     {
         return new HttpClient($phpunit);
     }

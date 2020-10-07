@@ -2,8 +2,8 @@
 
 namespace Imanghafoori\MakeSure\Facades;
 
-use Imanghafoori\MakeSure\HttpClient;
 use Illuminate\Support\Facades\Facade;
+use Imanghafoori\MakeSure\HttpClient;
 
 /**
  * Class MakeSure.
