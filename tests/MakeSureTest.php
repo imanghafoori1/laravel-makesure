@@ -136,9 +136,11 @@ class MakeSureTest extends TestCase
 
     public function test_exceptionIsThrown()
     {
+        $exception = new class {};
         $_this = Mockery::mock();
-        $_this->shouldReceive('expectException')->once()->with(MyException::class);
-        MakeSure::about($_this)->exceptionIsThrown(MyException::class);
+
+        $_this->shouldReceive('expectException')->once()->with($exception);
+        MakeSure::about($_this)->exceptionIsThrown($exception);
     }
 
     public function test_whenEventHappens()
@@ -147,8 +149,4 @@ class MakeSureTest extends TestCase
         Event::shouldReceive('dispatch')->once()->with($event);
         MakeSure::about(Mockery::mock())->whenEventHappens($event);
     }
-}
-
-class MyException extends \Exception
-{
 }
