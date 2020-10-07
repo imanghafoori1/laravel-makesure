@@ -124,6 +124,16 @@ class MakeSureTest extends TestCase
         $this->assertEquals([['assertSuccessful', null]], $chain->data['assertion']);
     }
 
+    public function test_redirect()
+    {
+        $response = Mockery::mock();
+        $response->shouldReceive('assertRedirect')->once()->with('/login');
+        $_this = Mockery::mock();
+
+        $_this->shouldReceive('get')->once()->andReturn($response);
+        MakeSure::about($_this)->sendingGetRequest('/profile')->isRespondedWith()->redirect('/login');
+    }
+
     public function test_exceptionIsThrown()
     {
         $_this = Mockery::mock();
