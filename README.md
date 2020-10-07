@@ -27,7 +27,7 @@ You can use it like this :
 
 ```php
 
-  MakeSure::that($this)->
+  MakeSure::about($this)->
       ->sendingGetRequest('some-url')
       ->isRespondedWith()
       ->statusCode(402);
@@ -44,11 +44,11 @@ You should start of with the `MakeSure` alias or the `Imanghafoori\MakeSure\Faca
 
 ```
 
-MakeSure::that($this)->...
+MakeSure::about($this)->...
 
 ```
 
-Note that for technical reasons you should always pass $this into the `that` method.
+Note that for technical reasons you should always pass $this into the `about` method.
 
 
 then you have access to all of these methods:
