@@ -122,4 +122,13 @@ class MakeSureTest extends TestCase
         $resp->success();
         $this->assertEquals([['assertSuccessful', null]], $chain->data['assertion']);
     }
+
+    public function test_exceptionIsThrown()
+    {
+        $_this = Mockery::mock();
+        $_this->shouldReceive('expectException')->once()->with(MyException::class);
+        MakeSure::about($_this)->exceptionIsThrown(MyException::class);
+    }
 }
+
+class MyException extends \Exception {}
