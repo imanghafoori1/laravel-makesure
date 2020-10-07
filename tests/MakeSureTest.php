@@ -131,4 +131,6 @@ class MakeSureTest extends TestCase
     }
 }
 
-class MyException extends \Exception {}
+class MyException extends \Exception
+{
+}
