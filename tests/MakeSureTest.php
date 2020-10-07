@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Event;
 use Imanghafoori\MakeSure\Facades\MakeSure;
 
 class MakeSureTest extends TestCase
@@ -121,5 +122,31 @@ class MakeSureTest extends TestCase
         $resp = new \Imanghafoori\MakeSure\Expectations\Response($chain);
         $resp->success();
         $this->assertEquals([['assertSuccessful', null]], $chain->data['assertion']);
+    }
+
+    public function test_redirect()
+    {
+        $response = Mockery::mock();
+        $response->shouldReceive('assertRedirect')->once()->with('/login');
+        $_this = Mockery::mock();
+
+        $_this->shouldReceive('get')->once()->andReturn($response);
+        MakeSure::about($_this)->sendingGetRequest('/profile')->isRespondedWith()->redirect('/login');
+    }
+
+    public function test_exceptionIsThrown()
+    {
+        $exception = Mockery::mock();
+        $_this = Mockery::mock();
+
+        $_this->shouldReceive('expectException')->once()->with($exception);
+        MakeSure::about($_this)->exceptionIsThrown($exception);
+    }
+
+    public function test_whenEventHappens()
+    {
+        $event = Mockery::mock();
+        Event::shouldReceive('dispatch')->once()->with($event);
+        MakeSure::about(Mockery::mock())->whenEventHappens($event);
     }
 }
