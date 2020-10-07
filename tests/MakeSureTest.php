@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Event;
 use Imanghafoori\MakeSure\Facades\MakeSure;
 
 class MakeSureTest extends TestCase
@@ -128,6 +129,13 @@ class MakeSureTest extends TestCase
         $_this = Mockery::mock();
         $_this->shouldReceive('expectException')->once()->with(MyException::class);
         MakeSure::about($_this)->exceptionIsThrown(MyException::class);
+    }
+
+    public function test_whenEventHappens()
+    {
+        $event = new class {};
+        Event::shouldReceive('dispatch')->once()->with($event);
+        MakeSure::about(Mockery::mock())->whenEventHappens($event);
     }
 }
 
