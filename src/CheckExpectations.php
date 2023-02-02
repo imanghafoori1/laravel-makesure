@@ -38,7 +38,6 @@ class CheckExpectations
     /**
      * @param $method
      * @param $data
-     *
      * @return mixed
      */
     private function sendRequest($method, $data)
