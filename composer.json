@@ -1,7 +1,7 @@
 {
     "name": "imanghafoori/laravel-makesure",
-    "description": "A laravel package to help you write expressive tests",
-    "keywords": ["laravel", "laravel-testing", "laravel5-package", "PHP", "laravel5"],
+    "description": "A Laravel package to help you write expressive tests",
+    "keywords": ["laravel", "laravel-testing", "laravel-package", "PHP"],
     "license": "MIT",
     "homepage": "https://github.com/imanghafoori1/laravel-makesure",
     "authors": [
@@ -12,7 +12,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "laravel/framework":"~5.1|6.*|7.*|8.*"
+        "laravel/framework":"~5.1|6.*|7.*|8.*|9.*|10.*|11.*"
     },
     "autoload-dev": {
         "classmap": ["tests/TestCase.php"]
@@ -28,7 +28,7 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "./vendor/bin/phpunit"
     },
     "extra": {
         "laravel": {
