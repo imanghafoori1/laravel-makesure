@@ -36,7 +36,7 @@ class HttpClient
     /**
      * HttpClient constructor.
      *
-     * @param $phpunit
+     * @param  $phpunit
      */
     public function __construct($phpunit)
     {

@@ -14,7 +14,7 @@ class IsRespondedWith
     /**
      * IsRespondedWith constructor.
      *
-     * @param $chain
+     * @param  $chain
      */
     public function __construct(Chain $chain)
     {
