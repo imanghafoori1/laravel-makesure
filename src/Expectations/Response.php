@@ -11,7 +11,7 @@ class Response
     /**
      * Response constructor.
      *
-     * @param $chain
+     * @param  $chain
      */
     public function __construct(Chain $chain)
     {
@@ -54,8 +54,8 @@ class Response
     }
 
     /**
-     * @param $value
-     * @param $type
+     * @param  $value
+     * @param  $type
      */
     public function addAssertion($type, $value = null)
     {

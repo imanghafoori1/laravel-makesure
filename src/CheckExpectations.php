@@ -11,8 +11,8 @@ class CheckExpectations
     /**
      * CheckExpectations constructor.
      *
-     * @param $chain
-     * @param $phpunit
+     * @param  $chain
+     * @param  $phpunit
      */
     public function __construct(Chain $chain, $phpunit)
     {
@@ -36,9 +36,8 @@ class CheckExpectations
     }
 
     /**
-     * @param $method
-     * @param $data
-     *
+     * @param  $method
+     * @param  $data
      * @return mixed
      */
     private function sendRequest($method, $data)
@@ -47,7 +46,7 @@ class CheckExpectations
     }
 
     /**
-     * @param $response
+     * @param  $response
      */
     private function checkResponses($response)
     {
